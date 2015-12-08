@@ -1,0 +1,16 @@
+{
+    "Normal": [
+        {
+            "cityId": "1-59063_13_AL",
+            "city": "中国_河南_南阳_卧龙区",
+            "language": "zh-cn",
+            "unit": "0",
+            "connectKey": "H+oSeGpA",
+            "longitude": "116.40",
+            "latitude": "38.63",
+            "futureCount": "2",
+            "showAlarm": "0",
+            "simCounty": "cn"
+        }
+    ]
+}
