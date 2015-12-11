@@ -62,10 +62,14 @@ public class IsGooglePlay_DuAdManager {
             joNative.put(KEY_FBID, jaFbids);
             ja.put(joNative);
             joMain.put(KEY_NATVIVE, ja);
+            
+            JSONArray offerwallConfig = new JSONArray();
             JSONObject joOfferwall = new JSONObject();
             joOfferwall.put(KEY_PID, "10317");
             joOfferwall.put(KEY_FBID, "1668406463436172_1668406693436149");
-            joMain.put(KEY_OFFERWALL, joOfferwall);
+            offerwallConfig.put(joOfferwall);
+            
+            joMain.put(KEY_OFFERWALL, offerwallConfig);
             initSuccess = true;
         } catch (Exception e) {
             initSuccess = false;
