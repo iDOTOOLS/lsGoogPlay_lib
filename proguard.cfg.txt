@@ -1,0 +1,8 @@
+
+###################googlePlay Du SDK##################################
+-keep   class   com.dianxinos.DXStatService.stat.TokenManager   {   
+public  static  java.lang.String    getToken(android.content.Context);  
+}   
+-keep   public  class   *   extends android.content.BroadcastReceiver   
+-keep   public  class   *   extends android.app.Activity    
+-keep   public  class   *   extends android.content.ContentProvider 
