@@ -1,4 +1,3 @@
-
 package com.lockscreen.lib.googleplay;
 
 import android.app.Activity;
@@ -26,22 +25,6 @@ public class IsGooglePlay_DuAdManager {
 
     private static IsGooglePlay_DuAdManager mInstance;
 
-    private boolean initSuccess = false;
-    
-    private IsGooglePlay_DuAdManager() {
-    }
-
-    public static IsGooglePlay_DuAdManager getInstance() {
-
-        if (mInstance == null) {
-            mInstance = new IsGooglePlay_DuAdManager();
-            mInstance.initSuccess = false;
-        }
-        if(!mInstance.initSuccess) {
-            mInstance.ConfigDuadNetWork(Utilities.getApplicationContext());
-        }
-        return mInstance;
-    }
 
     /**
      * 广告配置信息
