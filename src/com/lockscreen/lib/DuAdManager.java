@@ -30,7 +30,7 @@ public class DuAdManager extends DuAdManagerApi{
      * 
      * @param context * @return
      */
-    protected boolean ConfigDuadNetWork(Context context) {
+    public boolean ConfigDuadNetWork(Context context) {
         JSONObject joMain = new JSONObject();
         JSONArray ja = new JSONArray();
         try {
