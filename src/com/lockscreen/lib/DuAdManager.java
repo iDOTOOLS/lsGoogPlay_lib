@@ -1,20 +1,18 @@
-
-package com.lockscreen.lib.googleplay;
+package com.lockscreen.lib;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-
-import com.dotools.utils.Utilities;
 import com.duapps.ad.base.DuAdNetwork;
 import com.duapps.ad.offerwall.ui.OfferWallAct;
+import com.lockscreen.api.DuAdManagerApi;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 
-public class IsGooglePlay_DuAdManager {
+public class DuAdManager extends DuAdManagerApi{
 
     private static final String KEY_PID = "pid";
 
@@ -24,31 +22,15 @@ public class IsGooglePlay_DuAdManager {
 
     private static final String KEY_OFFERWALL = "offerwall";
 
-    private static IsGooglePlay_DuAdManager mInstance;
+    private static DuAdManager mInstance;
 
-    private boolean initSuccess = false;
-    
-    private IsGooglePlay_DuAdManager() {
-    }
-
-    public static IsGooglePlay_DuAdManager getInstance() {
-
-        if (mInstance == null) {
-            mInstance = new IsGooglePlay_DuAdManager();
-            mInstance.initSuccess = false;
-        }
-        if(!mInstance.initSuccess) {
-            mInstance.ConfigDuadNetWork(Utilities.getApplicationContext());
-        }
-        return mInstance;
-    }
 
     /**
      * 广告配置信息
      * 
      * @param context * @return
      */
-    private void ConfigDuadNetWork(Context context) {
+    protected boolean ConfigDuadNetWork(Context context) {
         JSONObject joMain = new JSONObject();
         JSONArray ja = new JSONArray();
         try {
@@ -70,12 +52,12 @@ public class IsGooglePlay_DuAdManager {
             offerwallConfig.put(joOfferwall);
             
             joMain.put(KEY_OFFERWALL, offerwallConfig);
-            initSuccess = true;
+            DuAdNetwork.init(context, joMain.toString());
+            return true;
         } catch (Exception e) {
-            initSuccess = false;
             e.printStackTrace();
+            return false;
         }
-        DuAdNetwork.init(context, joMain.toString());
     }
 
     public void jumpToAdWall(Activity act) {
