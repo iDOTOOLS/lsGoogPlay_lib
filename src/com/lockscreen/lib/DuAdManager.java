@@ -6,12 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import com.duapps.ad.base.DuAdNetwork;
 import com.duapps.ad.offerwall.ui.OfferWallAct;
+import com.lockscreen.api.DuAdManagerApi;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 
-public class DuAdManager {
+public class DuAdManager extends DuAdManagerApi{
 
     private static final String KEY_PID = "pid";
 

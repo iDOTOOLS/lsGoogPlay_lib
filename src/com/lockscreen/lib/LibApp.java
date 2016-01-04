@@ -1,10 +1,10 @@
 package com.lockscreen.lib;
 
-import com.lockscreen.api.UmengUpdateAPI;
+import com.lockscreen.api.DuAdManagerApi;
 
 public class LibApp {
 
     public static void init(){
-        UmengUpdateAPI.className = DuAdManager.class.getName();
+        DuAdManagerApi.className = DuAdManager.class.getName();
     }
 }
