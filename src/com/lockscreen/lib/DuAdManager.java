@@ -22,8 +22,6 @@ public class DuAdManager extends DuAdManagerApi{
 
     private static final String KEY_OFFERWALL = "offerwall";
 
-    private static DuAdManager mInstance;
-
 
     /**
      * 广告配置信息
