@@ -22,15 +22,13 @@ public class DuAdManager extends DuAdManagerApi{
 
     private static final String KEY_OFFERWALL = "offerwall";
 
-    private static DuAdManager mInstance;
-
 
     /**
      * 广告配置信息
      * 
      * @param context * @return
      */
-    protected boolean ConfigDuadNetWork(Context context) {
+    public boolean ConfigDuadNetWork(Context context) {
         JSONObject joMain = new JSONObject();
         JSONArray ja = new JSONArray();
         try {
